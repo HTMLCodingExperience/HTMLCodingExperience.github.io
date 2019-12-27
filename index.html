@@ -1,7 +1,8 @@
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html {
-      background-image:url("https://digitalswitzerland.com/wp-content/uploads/2018/01/Sky_Gradient.jpg");
+      background-image:url("https://www.hdwallpapers.in/download/neon_gradient-1366x768.jpg");
     }
     h1 {
       color:tomato;
@@ -9,6 +10,24 @@
       font-family: Monospace;
       font-size: 40px;
     }
+    .parallax {
+  background-image: url("img_parallax.jpg");
+
+  min-height: 500px; 
+      
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   </style>
+  <div>
   <h1>Hi,Welcome</h1>
+  <div class="parallax"></div>
+  <div style="height:1000px;background-color:red;font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
+  </div>
 </html>
