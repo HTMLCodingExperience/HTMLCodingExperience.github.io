@@ -1,64 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <script type="text/javascript">
-        function scrollFooter(scrollY, heightFooter)
-{
-    console.log(scrollY);
-    console.log(heightFooter);
-
-    if(scrollY >= heightFooter)
-    {
-        $('footer').css({
-            'bottom' : '0px'
-        });
-    }
-    else
-    {
-        $('footer').css({
-            'bottom' : '-' + heightFooter + 'px'
-        });
-    }
-}
-
-$(window).load(function(){
-    var windowHeight        = $(window).height(),
-        footerHeight        = $('footer').height(),
-        heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 20;
-
-    // Definindo o tamanho do elemento pra animar
-    $('#scroll-animate, #scroll-animate-main').css({
-        'height' :  heightDocument + 'px'
-    });
-
-    // Definindo o tamanho dos elementos header e conteúdo
-    $('header').css({
-        'height' : windowHeight + 'px',
-        'line-height' : windowHeight + 'px'
-    });
-
-    $('.wrapper-parallax').css({
-        'margin-top' : windowHeight + 'px'
-    });
-
-    scrollFooter(window.scrollY, footerHeight);
-
-    // ao dar rolagem
-    window.onscroll = function(){
-        var scroll = window.scrollY;
-
-        $('#scroll-animate-main').css({
-            'top' : '-' + scroll + 'px'
-        });
-        
-        $('header').css({
-            'background-position-y' : 50 - (scroll * 100 / heightDocument) + '%'
-        });
-
-        scrollFooter(scroll, footerHeight);
-    }
-});
-    </script>
+    
   </head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <body>
@@ -170,18 +113,8 @@ footer,
       transition-timing-function: cubic-bezier(0, 0, 0, 1);
 }
   </style>
-  <div id="scroll-animate">
-  <div id="scroll-animate-main">
-    <div class="wrapper-parallax">
-      <header>
-        <h1>Header</h1>
-      </header>
-
-      <section class="content">
-        <h1>Content</h1>
-      </section>
-      <script>
-          function scrollFooter(scrollY, heightFooter)
+    <script type="text/javascript">
+        function scrollFooter(scrollY, heightFooter)
 {
     console.log(scrollY);
     console.log(heightFooter);
@@ -237,9 +170,19 @@ $(window).load(function(){
         scrollFooter(scroll, footerHeight);
     }
 });
-      </script>
+    </script>
+  <div id="scroll-animate">
+  <div id="scroll-animate-main">
+    <div class="wrapper-parallax">
+      <header>
+        <h1>Header</h1>
+      </header>
+
+      <section class="content">
+        <h1>Content</h1>
+      </section>
       
-      </bod>
+      </body>
 
       <footer>
         <h1>Footer</h1>
