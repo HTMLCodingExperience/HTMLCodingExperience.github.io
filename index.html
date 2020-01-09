@@ -1,52 +1,4 @@
 <!DOCTYPE HTML>
-<script type="text/javascript">
-  function scrollFooter(scrollY, heightFooter)
-{
-    console.log(scrollY);
-    console.log(heightFooter);
-    if(scrollY >= heightFooter)
-    {
-        $('footer').css({
-            'bottom' : '0px'
-        });
-    }
-    else
-    {
-        $('footer').css({
-            'bottom' : '-' + heightFooter + 'px'
-        });
-    }
-}
-$(window).load(function(){
-    var windowHeight        = $(window).height(),
-        footerHeight        = $('footer').height(),
-        heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 20;
-    // Definindo o tamanho do elemento pra animar
-    $('#scroll-animate, #scroll-animate-main').css({
-        'height' :  heightDocument + 'px'
-    });
-    // Definindo o tamanho dos elementos header e conteúdo
-    $('header').css({
-        'height' : windowHeight + 'px',
-        'line-height' : windowHeight + 'px'
-    });
-    $('.wrapper-parallax').css({
-        'margin-top' : windowHeight + 'px'
-    });
-    scrollFooter(window.scrollY, footerHeight);
-    // ao dar rolagem
-    window.onscroll = function(){
-        var scroll = window.scrollY;
-        $('#scroll-animate-main').css({
-            'top' : '-' + scroll + 'px'
-        });
-        
-        $('header').css({
-            'background-position-y' : 50 - (scroll * 100 / heightDocument) + '%'
-        });
-        scrollFooter(scroll, footerHeight);
-    }
-});
  </script>
 <html>
  <style>
@@ -141,7 +93,21 @@ footer,
      -moz-transition-timing-function: cubic-bezier(0, 0, 0, 1);
       transition-timing-function: cubic-bezier(0, 0, 0, 1);
 }
+   .parallax {
+  /* The image used */
+  background-image: url("img_parallax.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   </style>
+  <div class="parallax"></div>
   <div id="scroll-animate">
   <div id="scroll-animate-main">
     <div class="wrapper-parallax">
@@ -157,6 +123,7 @@ footer,
         <h1>Footer</h1>
       </footer>
     </div>
-  </div>
+  </div>  
 </div>
+  <div class="parallax"></div>
 </html>
